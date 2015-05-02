@@ -21,9 +21,34 @@ void nextNode();
 void insertBeing();
 void sizetest();
 void searchStr();
-void reverStr();
+void reStr();
 void midInsert();
 };
+
+void test::midInsert()
+{
+cout<<" insert position no:";
+int pos;
+cin>>pos;
+temp=head;
+
+node *midNode=new node();
+cout<<"enter the mid data value :";
+int info;
+cin>>info;
+midNode->data=info;
+
+
+for(int i=1;i<=pos-1;i++)
+        {
+        temp=temp->next;
+        }
+
+midNode->next=temp->next;
+temp->next=midNode;
+
+}
+
 
 void test::searchStr()
 {
@@ -124,7 +149,8 @@ cout<<"\n3.nextNode()";
 cout<<"\n4.InsertBegin()";
 cout<<"\n5. linklist size()";
 cout<<"\n6. search string()";
-cout<<"\n7. String reverse();
+cout<<"\n7. String reverse()";
+cout<<"\n8. Insert Middle()";
 cout<<"\nanswer please :";
 int ch;
 cin>>ch;
@@ -156,6 +182,10 @@ else if(ch==7)
         {
         reStr();
         }
+else if(ch==8)
+		{
+		midInsert();	
+		}
 else
         {
         cout<<"invaild selection";
