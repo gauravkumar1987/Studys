@@ -1,0 +1,266 @@
+CHAPTER :- one
+===============
+
+Pointer :- The pointer is a variable that store the address of other variable.
+-------	   its declared by asterik(*) sign.
+
+Syntax :-
+-------	
+	int * ptr;
+	
+	where :-
+		int 	- its a data type
+		asterik - its a pointer type 
+		ptr 	- pointer variable name
+
+	all the pointer variable occupy the same space in the memory .It's independent from data-type.the space in the memory depend upon complier.
+
+	address operator (&) its also know as referring operator.
+	asterik(*) operator is also know as pointer operator , Indirection operator dereferencing operator. 
+	[dereferencing operator mean if the address of any variable is 	know then we can fetch its contents using the pointer operator(*). this operator 
+	know as dereferencing operator. 
+
+Examples :- Pointer simple examples
+			vaild
+			------
+			1.> int b=10;
+				int *a =&b;
+			2> 	int *a=NULL;
+				int b=10;
+				a=&b
+			3>  int i=10;
+				int *a;
+				a=&i
+				*a=20
+			4> int *(&i)
+			
+			
+			Invaild
+			--------
+			1> int *a=10; [because pointer doesn't consist the addres of any vartiable]
+
+PQ:- FIND OUTPUT
+	int i=10;
+    int *a;
+	a=&i;
+	*a=20;
+	cout<<i;
+
+			
+segmentation fault arises due to following condition :- 
+-------------------------------------------------------
+1.to accessing variable that has already been freed or doesn't exits know as [ Dangling OR wild pointer ]
+2.writing to a read-only portion of the memory and try to used.
+3.A common way to get a segfault is to dereference a null pointer 
+a variable	that is assigned NULL.
+
+example 1:- to accessing variable that has already been freed or doesn't exits know as [ Dangling OR wild pointer ]
+ 
+			char *dp = NULL;
+				{
+			    char c;
+				dp = &c;
+				} 
+				/* c falls out of scope */
+				/* dp is now a dangling pointer */
+
+example 2:- Another segfault happens when you try to write to a portion of memory that was marked as read-only:
+
+			char *str = "Foo"; // Compiler marks the constant string as read-only
+			*str = 'b'; // Which means this is illegal and results in a segfault
+
+example 3:-	A common way to get a segfault is to dereference a null pointer
+
+			yes this is a possible ways you will get error
+			----------------------------------------------
+				int *p = NULL;
+				*p = 1;
+				
+					or
+					
+				
+				int *p =NULL
+				cout<<*p;
+		
+			but This will not give the error :-
+			----------------------------------
+				int *p = NULL;
+				int b=1;
+				p=&b;
+POINTER TO POINTER
+===================================================================================			
+
+
+
+
+
+pointer with 1-D array
+==================
+How to access array
+
+
+int *i;
+int a[5]={10,20,30}
+
+1> i=a;  [vaild]
+
+2> i=&a;  [invaild]
+3> i=&a[0] [vaild]
+
+
+>>Array accessing sample program 
+-----------------------------------
+int main()
+{
+	int *i;
+	int a[5]={12,13,14,15,16};
+	
+	cout<<a;
+	cout<<"\n"<<i;
+	for(int j=0;5>j;j++)
+	{
+	cout<<"\na ["<<j<<"] value = " <<*(a+j);  
+		or
+	//cout<<*(&a[0]+j)
+		or
+	// cout<<a[i];
+	
+	}
+	return 0;
+}
+
+
+Operation with pointer
+--------------------------
+
+
+
+
+Q1:- How much space does these pointers occupy in memory ?
+		int *ptr;
+		float *ptr;
+		double *ptr;
+
+Q2 :- Whats segmentation fault ? what are the 3 ways to get that fault? Give example?
+Q3 :- what's Dangling OR wild pointer ? give example ?
+Q4 :- what's referencing operator or dereferencing operator ? 
+		
+Q5 :- Provide the output of program??with explnation
+	int i=10;
+    int *a;
+	a=&i;
+	*a=20;
+	cout<<i;
+
+	
+Q6: check valid or invalid pointers?with explination
+
+
+			1.> int b=10;
+				int *a =&b;
+			2> 	int *a=NULL;
+				int b=10;
+				a=&b
+			3>  int i=10;
+				int *a;
+				a=&i
+				*a=20
+			4> int b=10; 
+			cout<<*(&b) .give explination
+			
+			5> int *a=10;
+			
+			6>int *p = NULL;
+				*p = 1;
+			
+			7>int *p =NULL
+				cout<<*p;
+			
+			8>int *p = NULL;
+				int b=1;
+				p=&b;
+			
+			9>int x, *p=&x;
+			
+			10>int *p=&x;
+				int x=10;
+			
+			11> int *p;
+			     cin>>p;
+			
+			12> int *p;
+			   cin>>*p;
+			
+			13> int x=10;
+			    int *x=&x;
+				
+Q7 :- Vaild or Invaild
+
+int *i;
+int a[5]={10,20,30}
+
+		1> i=a;  
+		2> i=&a;  
+		3> i=&a[0]
+Q8 : - wap to find sum of array using pointer? 		 
+
+		
+
+	
+Answer1 :- All the pointer variable's occupy the same space in the memory.It's independent from data-type.
+		example:- 	#include<iostream>
+					using namespace std;
+					int main()
+						{
+						int *ptr;
+						char *ptr1;
+						double *ptr2;
+						bool * ptr3;
+						cout<<"\nsize of int "<<sizeof(ptr);
+						cout<<"\nsize of char "<<sizeof(ptr1);
+						cout<<"\nsize of double "<<sizeof(ptr2);
+`a/						cout<<"\nsize of bool "<<sizeof(ptr3);
+						}
+			output :- 8 byte . depend upon the complier.
+			
+Answer3: - When a pointer pointing to a variable address that doesn't exits or freed know as dangling pointer.	
+		example:-	
+				  char *dp = NULL;
+				   {
+					   char c;
+					   dp = &c;
+				   } 
+					 /* c falls out of scope */
+					 /* dp is now a dangling pointer */
+Answer5 :- it will give the out put 20. because *a point to data of i , anything written in *a will overwritten  at i data position.
+
+Answer 6:- 1,2,3,4,8,12 vaild
+           5,6,7,10,11,13 invaild
+		   check - 9[vaild]
+answer7 :- 1,3[vaild]
+			2 [invaild]
+Answer 8:-
+
+
+int main()
+{
+
+int *i,no,sum;
+int a[5];
+cout<<"enter the no";
+cin>>no;
+
+for(int i=0;i<no;i++)
+{
+cin>>a[i];
+}
+i=a;
+for(int j=0;no>j;j++)
+{
+sum+=*(i+j);
+}
+cout<<sum;
+return 0;
+}
+
+		   

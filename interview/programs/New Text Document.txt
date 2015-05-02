@@ -1,0 +1,23 @@
+void rev(char str[])
+{
+char temp;
+
+length = strlen(str);
+for(int i=0,j=length -1,i<j;i++ ,j--)
+{
+temp =str[i];
+str[i]=str[j];
+str[j]=temp;
+}
+
+cout<<str;
+}
+int main()
+{
+char st[50];
+cin.getline(st,50);
+rev(st);
+return 0;
+
+
+}

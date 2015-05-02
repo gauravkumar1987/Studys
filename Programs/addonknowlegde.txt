@@ -1,0 +1,3 @@
+The .a is almost certainly a static library. It's a Unix convention.
+
+The Unix convention for static libraries is libname.a, and for shared libraries libname.so

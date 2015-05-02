@@ -1,0 +1,15 @@
+Cout : - In C++ , the standard output stream is represented using pre-defined object [ cout ] .so as to perform standard output operations.
+		The Cout stream is used conjunction with bitwisw left shift operator ( << ) for performing standard output operations.
+		
+		syntax : - Cout << "data";
+	where:-
+		cout :- object of standard output steam
+		<<	:- insertion or put to operator
+		
+Cin :- In c++ , the standard input stream in c++ is represted using pre-defined object cin , so as to perform standard input operators.
+
+	syntax :- 
+		cin :- object of input stream
+		>> :- extraction or get from operator
+
+In C programming , the input or output is handled by scanf() and printf() operator. bot are functions

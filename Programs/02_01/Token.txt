@@ -1,0 +1,7 @@
+Token :- Its the various c++ program elemnts which is identified by complier.
+
+example : - variables such as sum , age.
+			operators such as + , - , % etc.
+	
+special operator :- # , ?
+

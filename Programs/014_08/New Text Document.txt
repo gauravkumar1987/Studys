@@ -1,0 +1,125 @@
+this pointer:1.  Whenever we call a member function in association with an object , the address of that  object is implicitly
+				passed as hidden first argument which is received in the called memeber function using a special pointer know as this pointer.
+			2.  this pointer contains the address of the object that generates the call.
+			3.	its implicitly defined in each member function and its data type is that of a pointer to the class type.
+			
+
+example :-
+--------------------
+#include<iostream>
+using namespace std;
+
+class aa
+        {
+        private:
+        int a;
+        public:
+        aa()
+                {
+                cout<<"\nthe address of class : "<<this;
+                }
+        void set(int x)
+                {
+                this->a=x;
+                }
+        void get()
+                {
+                cout<<this->a;
+                }
+        };
+
+int main()
+{
+aa obj;
+aa obj2;
+//cout<<"\naddress of main : "<<this;
+return 0;
+};
+
+-----------------------------------------
+
+But when its used within the inhertance 1st it will point to same class then it will point to in inherted class.
+
+example :- 1.1
+
+#include<iostream>
+using namespace std;
+
+class aa
+{
+public:
+int a;
+void give()
+{
+a=10;
+}
+};
+
+class bb:public aa
+{
+public:
+int a;
+void disp()
+{
+a=20;
+}
+void show()
+{
+give();
+disp();
+cout<<this->a;
+}
+};
+
+
+int main()
+{
+
+bb obj;
+
+obj.show();
+
+return 0;
+};
+------------
+output:- 20
+---------
+example :- 1.2
+
+#include<iostream>
+using namespace std;
+
+class aa
+{
+public:
+int a;
+
+void give()
+{
+a=10;
+}
+};
+
+class bb:public aa
+{
+public:
+void show()
+{
+give();
+cout<<this->a;
+}
+};
+
+
+int main()
+{
+
+bb obj;
+
+obj.show();
+
+return 0;
+};
+--------------------
+output:- 10
+--------------------

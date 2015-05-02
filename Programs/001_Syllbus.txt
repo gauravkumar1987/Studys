@@ -1,0 +1,25 @@
+06_functions
+		
+
+
+
+
+
+
+
+
+
+04_01 	-   Standard output streams
+		-	pended mainpulators		
+		
+		
+		
+		
+014_08 - This pointer
+
+
+c++ masking ??
+c++ virtual table
+bitwise exclusive or
+
+ 

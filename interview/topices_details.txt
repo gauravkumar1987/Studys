@@ -1,0 +1,10 @@
+Class 																		//id-10
+	- class declaration ways 													//id-10.1
+		- by object 																//id-10.1.1
+		- by static 																//id-10.1.2
+	- const variables 															//id-10.2
+		- mutable variables 														//id-10.2.1
+	- volatile variables 														//id-10.3
+
+Programs
+	singleTon

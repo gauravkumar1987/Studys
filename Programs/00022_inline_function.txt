@@ -1,0 +1,35 @@
+Inline fucntion :- Inline function is a function which gets expanded inline at each point in the program where it is called.
+
+
+example :-1
+
+line void disp()
+{
+
+}
+int main()
+{
+disp();
+}
+
+
+example :- 2
+
+#include<iostream>
+using namespace std;
+class aa
+{
+public:
+void disp();
+};
+inline void aa::disp()
+{
+cout<<"hello";
+}
+
+int main()
+{
+aa obj;
+obj.disp();
+return 0;
+}

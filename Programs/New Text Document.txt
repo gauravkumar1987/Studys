@@ -1,0 +1,18 @@
+class aa
+{
+aa(int,int, int)
+{
+
+}
+};
+
+
+			max(2,3,int)
+			}
+			
+			
+			
+01 --- LINKER ,Complier ,Assembler =
+02 --- conditional compilation
+	   #pragma
+05.Bitwise Exclusive or 

@@ -1,0 +1,5 @@
+unary operator act upon a single operator
+like -- ,++ ,- , +etc
+
+binary operator required two opeators.
+like a+b , c+d

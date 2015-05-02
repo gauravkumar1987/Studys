@@ -1,0 +1,9 @@
+Q:- Mutable storage
+Q:- const storage
+
+Q:-Storage class in c and in c++
+
+
+Q:-difference between
+aa *obj1 = new aa; 
+aa *obj2 = new aa();

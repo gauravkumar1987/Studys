@@ -1,0 +1,187 @@
+The preprocessor 
+=================
+All the preprocessors in c are not part of actual c programming language. When c language had introduced in the market there are different architecture of 
+computers was present. To make the c language portable in different architectures or compilers, c language developer had introduced preprocessor. 
+It is only instruction to compiler. All the preprocessor process before the staring of actual compilation and create an intermediate file. In the intermediate 
+file all preprocessor statement is replaced by corresponding c code. During the compilation process that intermediate file is deleted by compiler automatically. 
+------------------
+See the Image 01
+
+Command to generate intermediate files in gcc
+--------------------------------------------
+g++ -S -save-temps ex01.cpp
+three files will generate
+-------------------------
+ex01.cpp
+ex01.ii    in [gcc] or ex01.i in [turbo c]
+ex01.s
+
+g++ ex01.s -o hello
+
+
+T-1
+===
+1.The file include within the angle brackets #include<iostream.h> , the file is searched into the standard complier include
+  path.
+2.includes cpp class library header iostream #include<iostream>
+
+3.The filename is enclosed within double quotes #include'iostream' ,then its search path is expanded to current source directory 
+
+T-2
+====
+their are 4 categorises 
+1.File inclusion directive -- 	#include
+								#include<iostream>
+								#include<iostream.h>
+								#include "iostream"
+
+2.Macro Substitution directive -- #define
+								#define pi 3.14;
+								#define x(a) (a*2)  // parameter is passed into marco in main [cout<<x(2)]
+								#define getmax(a,b) ((a)>(b)?(a):(b))
+
+								
+
+3.conditional directive --  #if
+							else
+							#endif
+					
+							#elif
+							
+							#ifdef
+							#ifndef
+							#undef
+							
+4.Miscellaneous directive - #pragma :-The ‘#pragma’ directive is the method specified by the C standard for providing additional information to the compiler
+										if the complier doesn't identified the pragma it simply ignore the statement without showing error because pragma various
+										from complier to compiler
+								example:-	#pragma once
+											
+								example:-	#pragma warn +xxx
+											#pragma warn –xxx
+											#pragma warn .xxx
+
+											Where
+											+ means on
+											- means off
+											. means on/off (toggle)
+											to turn on/off the warning
+											
+
+								
+							#error:-The #error macro allows you to make compilation fail and issue a statement that will appear in the list of compilation 
+							         errors. It is most useful when combined with #if/#elif/#else to fail compilation if some condition is not true
+							example:-
+								[root@localhost test]# vi test2.cpp
+								#include<iostream>
+								#define hello 2
+								#ifndef hello
+								#error program not complie
+								#endif
+
+							#line
+
+							5.operator in preprocessor - 
+							#
+							##
+							 
+							 1.# :- stringizing operator  -- which convert any argument in the macro function in the string.
+									So we can say pound sign # is string maker.
+									Example:-
+																				
+											#include<stdio.h>
+											#define string(s) #s
+											int main(){
+												char str[15]= string(World is our );
+												printf("%s",str);
+												return 0;
+											}
+							 
+							2.## :- token pasting operator -- This operator is called token pasting operator. When we use a macro 
+									function with various argument then we can merge the argument with the help of ## operator.
+									Example:-
+											#include<stdio.h>
+											#define merge(p,q,r) p##q##r
+											int main(){
+												int merge(a,b,c)=45;
+												printf("%d",abc);
+												return 0;
+											}
+											Output : 45
+											Explanation :
+											Arguments a,b,c in merge macro call function is merged in abc by ## operator .So in the intermediate file declaration statement is converted as :
+											int abc = 45;
+
+									
+there are 15 preprocessor directory:-
+-------------------------------------
+    #include
+    #define
+    #undef
+    #if
+    #ifdef
+    #ifndef
+    #error
+    __FILE__
+    __LINE__
+    __DATE__
+    __TIME__
+    __TIMESTAMP__
+    pragma
+    # macro operator
+    ## macro operator
+		
+Example:-03
+		#define pi 3
+		int main()
+		{
+		#if (pi>2)
+
+
+
+
+======================================
+
+http://www.cquestions.com/2011/01/preprocessor-in-c.html
+
+
+Excersice 
+
+-------------------
+question 01:- Does complie
+
+#include<stdio.h>
+#define X (4+Y)
+#define Y (X+3)
+int main()
+{
+    printf("%d\n", 4*X+2);
+    return 0;
+}
+
+
+
+Question 02: -Does Complie whats the output
+#include<stdio.h>
+#define INFINITELOOP while(1)
+int main()
+{
+    INFINITELOOP
+    printf("IndiaBIX");
+    return 0;
+}
+
+
+question 03 - Will it result in to an error if a header file is included twice?
+Answer:-
+Unless the header file has taken care to ensure that if already included it doesn't get included again.
+Turbo C, GCC compilers would take care of these problems, generate no error. 
+
+
+
+question 04 - Does complie or not
+#define max(A,B,C)
+			int main()
+			{
+			max(2,3,int)
+			}

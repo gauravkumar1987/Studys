@@ -1,0 +1,9 @@
+their are two type of libraries
+1.static libraries
+2.dynamic libraries
+
+Static Libraries [.a] :- 
+
+$ nm libcalc.a
+
+http://www.bogotobogo.com/cplusplus/libraries.php

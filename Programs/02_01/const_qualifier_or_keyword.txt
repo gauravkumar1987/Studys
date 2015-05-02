@@ -1,0 +1,4 @@
+This a varaible how values remain fixed during the excution of program . if you try to overwrite it it will show error message.
+
+
+message : - assignment of read only variable a
